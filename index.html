@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>
+    // Full set of key codes, current key index: Up Up Down Down Left Right Left Right B A
+    var code = [38,38,40,40,37,39,37,39,66,65], key = 0;
+    document.onkeydown = function(e) {
+        // Increment key if the keycode matches.
+        if (code[key++] == e.keyCode) {
+            if (key == 10) {
+                // If the code was completed start/stop it.
+                alert("OK");
+                document.onkeypress = null;
+                key = 0
+            }
+        } else {
+            // Reset if the wrong key was pressed.
+            key = 0
+        }
+    };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
